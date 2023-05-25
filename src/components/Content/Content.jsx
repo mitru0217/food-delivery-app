@@ -1,5 +1,4 @@
 import { Layout, Button, Space, Card, Row, Col, Typography } from 'antd';
-
 import { PlusOutlined } from '@ant-design/icons';
 import BigMack from '../../assets/images/McDonalds/Big Mack.jpg';
 

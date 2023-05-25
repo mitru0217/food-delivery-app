@@ -14,7 +14,12 @@ const ShopPage = () => {
 
   return (
     <Layout
-      style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+        width: '100vw',
+      }}
     >
       <Affix>
         <Header onOrderButtonClick={handleOrderButtonClick} />
