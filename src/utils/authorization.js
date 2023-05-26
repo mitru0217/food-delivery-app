@@ -1,2 +1,1 @@
-export const Authorization =
-  'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhzemR3bmx2dWl4c2RwdGNscnRlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ5ODM2MTksImV4cCI6MjAwMDU1OTYxOX0.cT2jJZJ9jalNJwBlz4pdzcI_jHJDTgRd5JFd81a1nC0';
+export const Authorization = import.meta.env.VITE_PUBLIC_AUTHORIZATION;
