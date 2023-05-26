@@ -5,7 +5,7 @@ import BigMack from '../../assets/images/McDonalds/Big Mack.jpg';
 const Content = () => {
   const contentStyle = {
     paddingInline: 50,
-    minHeight: '100vh',
+    // minHeight: '100vh',
     backgroundColor: '#5b8c00',
   };
   return (

@@ -14,9 +14,13 @@ const ShopPage = () => {
 
   return (
     <Layout
+      // direction="vertical"
+      // style={{ width: '100%' }}
+      // size={[0, 48]}
       style={{
         display: 'flex',
         flexDirection: 'column',
+
         minHeight: '100vh',
         width: '100vw',
       }}
@@ -24,7 +28,7 @@ const ShopPage = () => {
       <Affix>
         <Header onOrderButtonClick={handleOrderButtonClick} />
       </Affix>
-      <Layout hasSider style={{ flex: '1', display: 'flex' }}>
+      <Layout hasSider>
         <Sider />
         <Content />
       </Layout>

@@ -8,7 +8,7 @@ const Sider = () => {
     paddingInline: 20,
     paddingTop: 20,
     backgroundColor: '#7cb305',
-    minHeight: '100vh',
+    // minHeight: '100vh',
     textAlign: 'center',
     width: '100%',
   };
