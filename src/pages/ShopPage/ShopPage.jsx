@@ -14,9 +14,6 @@ const ShopPage = () => {
 
   return (
     <Layout
-      // direction="vertical"
-      // style={{ width: '100%' }}
-      // size={[0, 48]}
       style={{
         display: 'flex',
         flexDirection: 'column',

@@ -1,17 +1,18 @@
 import axios from 'axios';
+import { Authorization } from '../../utils/authorization';
 
-async function fetchProductsData() {
-  const baseURL = 'https://hszdwnlvuixsdptclrte.supabase.co';
-  const apiKey =
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImhzemR3bmx2dWl4c2RwdGNscnRlIiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ5ODM2MTksImV4cCI6MjAwMDU1OTYxOX0.cT2jJZJ9jalNJwBlz4pdzcI_jHJDTgRd5JFd81a1nC0';
+const supabaseUrl = import.meta.env.VITE_PUBLIC_SUPABASE_URL;
+const supabaseAnonKey = import.meta.env.VITE_PUBLIC_SUPABASE_ANON_KEY;
 
+async function getProducts() {
   try {
-    const response = await axios.get(`${baseURL}/products`, {
+    const response = await axios.get(`${supabaseUrl}Products?select=*`, {
       headers: {
-        apikey: apiKey,
+        apikey: supabaseAnonKey,
+        Authorization: Authorization,
       },
     });
-
+    console.log(response.data);
     return response.data;
   } catch (error) {
     console.error('Error fetching SupaBase data:', error);
@@ -19,4 +20,4 @@ async function fetchProductsData() {
   }
 }
 
-export default fetchProductsData;
+export default getProducts;

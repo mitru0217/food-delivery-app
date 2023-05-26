@@ -27,7 +27,7 @@ const Sider = () => {
 
     fetchPartners();
   }, []);
-  console.log(partners);
+
   return (
     <Layout.Sider style={siderStyle} width={500}>
       <Space direction="vertical">

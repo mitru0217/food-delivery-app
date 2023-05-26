@@ -6,7 +6,7 @@ const supabaseAnonKey = import.meta.env.VITE_PUBLIC_SUPABASE_ANON_KEY;
 
 async function getPartners() {
   try {
-    const response = await axios.get(supabaseUrl, {
+    const response = await axios.get(`${supabaseUrl}/Partners?select=*`, {
       headers: {
         apikey: supabaseAnonKey,
         Authorization: Authorization,
