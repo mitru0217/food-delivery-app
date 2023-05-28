@@ -1,0 +1,10 @@
+name: food-delivery-app
+id: 046bdbe8-097a-43ff-aa0d-498359b6b4c2
+languages:
+  - TypeScript
+  - TSX
+extensions:
+  - .ts
+  - .cts
+  - .mts
+  - .tsx
