@@ -99,13 +99,7 @@ const ShopPage = () => {
         <Affix>
           <Header onOrderButtonClick={handleOrderButtonClick} />
         </Affix>
-        {partners.length > 0 && !isLoading && !error && (
-          <Layout hasSider>
-            <Sider partners={partners} onClick={handlePartnerCardClick} />
-            <Content products={products} />
-          </Layout>
-        )}
-        <Layout hasSider>
+        <Layout hasSider style={{ overflow: 'auto', flex: '1' }}>
           <Sider partners={partners} onClick={handlePartnerCardClick} />
           <Content products={products} />
         </Layout>
