@@ -6,7 +6,6 @@ export const getProductsByPartner = async partner => {
     .select('*')
     .order('id', { ascending: true })
     .eq('partners', partner);
-  console.log(AllProducts);
   return AllProducts;
 };
 
