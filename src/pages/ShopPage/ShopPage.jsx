@@ -91,7 +91,6 @@ const ShopPage = () => {
         style={{
           display: 'flex',
           flexDirection: 'column',
-
           minHeight: '100vh',
           width: '100vw',
         }}
@@ -99,7 +98,7 @@ const ShopPage = () => {
         <Affix>
           <Header onOrderButtonClick={handleOrderButtonClick} />
         </Affix>
-        <Layout hasSider style={{ overflow: 'auto', flex: '1' }}>
+        <Layout hasSider style={{ overflow: 'auto' }}>
           <Sider partners={partners} onClick={handlePartnerCardClick} />
           <Content products={products} />
         </Layout>

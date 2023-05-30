@@ -10,6 +10,8 @@ const Sider = ({ partners, onClick }) => {
     backgroundColor: '#7cb305',
     textAlign: 'center',
     width: '100%',
+    overflowY: 'auto',
+    height: 'calc(100vh - 100px)',
   };
 
   return (

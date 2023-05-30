@@ -1,6 +1,6 @@
-import { Button, Space, Card, Typography, List, Row, Col } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
+import { List, Row, Col } from 'antd';
 
+import ProductCard from '../ProductCard/ProductCard';
 // const { Title } = Typography;
 
 const ProductsList = ({ products, onClick }) => {
@@ -14,26 +14,7 @@ const ProductsList = ({ products, onClick }) => {
           <Row gutter={[16, 24]}>
             <List.Item>
               <Col span={8} style={{ width: '100%' }}>
-                <Card
-                  hoverable
-                  key={item.id}
-                  title={item.name}
-                  onClick={onClick}
-                  style={{ width: '300px', height: '350px' }}
-                >
-                  <Space direction="vertical" align="end">
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      style={{ width: '100%' }}
-                    />
-                    <Typography>Price:{item.price}$</Typography>
-                    <Button type="primary">
-                      Add to cart
-                      <PlusOutlined />
-                    </Button>
-                  </Space>
-                </Card>
+                <ProductCard item={item} onClick={onClick} />
               </Col>
             </List.Item>
           </Row>

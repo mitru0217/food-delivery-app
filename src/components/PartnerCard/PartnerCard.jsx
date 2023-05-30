@@ -1,9 +1,17 @@
 import PropTypes from 'prop-types';
 
-import { Card } from 'antd';
+import { Card, Skeleton } from 'antd';
 
 const PartnerCard = ({ item, onClick }) => {
   const { name, image } = item;
+  const isLoading = false;
+  if (isLoading) {
+    return (
+      <Card style={{ width: '300px', height: '350px' }}>
+        <Skeleton active />
+      </Card>
+    );
+  }
   return (
     <Card
       hoverable

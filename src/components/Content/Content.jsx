@@ -9,6 +9,8 @@ const Content = ({ products }) => {
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
+    overflowY: 'auto',
+    height: 'calc(100vh - 100px)',
   };
   return (
     <Layout.Content style={contentStyle}>
