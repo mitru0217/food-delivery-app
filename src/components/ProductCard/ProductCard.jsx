@@ -1,7 +1,8 @@
-// import { useState, useEffect } from 'react';
-
+// import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Button, Space, Card, Typography, Skeleton } from 'antd';
 import { PlusOutlined, DeleteOutlined } from '@ant-design/icons';
+import { useBadgeCountStore } from '../../zustand/store';
 
 const ProductCard = ({ item, onClick, isInShoppingCart }) => {
   const isLoading = false;
@@ -12,11 +13,17 @@ const ProductCard = ({ item, onClick, isInShoppingCart }) => {
       </Card>
     );
   }
+  const setBadgeCount = useBadgeCountStore(state => state.setBadgeCount);
 
   const handleAddToCart = () => {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const itemExists = cartItems.some(cartItem => cartItem.id === item.id);
+    if (itemExists) {
+      return;
+    }
     cartItems.push(item);
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    setBadgeCount(cartItems.length);
   };
 
   const handleRemoveFromCart = () => {
@@ -61,6 +68,17 @@ const ProductCard = ({ item, onClick, isInShoppingCart }) => {
       </Space>
     </Card>
   );
+};
+
+ProductCard.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    price: PropTypes.number,
+  }).isRequired,
+  onClick: PropTypes.func,
+  isInShoppingCart: PropTypes.bool,
 };
 
 export default ProductCard;

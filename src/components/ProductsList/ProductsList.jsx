@@ -1,9 +1,11 @@
 import { List, Row, Col } from 'antd';
-
+import { useShopStore } from '../../zustand/store';
+// import PropTypes from 'prop-types';
 import ProductCard from '../ProductCard/ProductCard';
 // const { Title } = Typography;
 
-const ProductsList = ({ products, onClick }) => {
+const ProductsList = ({ onClick }) => {
+  const { products } = useShopStore();
   return (
     <>
       <List
@@ -23,5 +25,9 @@ const ProductsList = ({ products, onClick }) => {
     </>
   );
 };
+
+// ProductsList.propTypes = {
+//   onClick: PropTypes.func,
+// };
 
 export default ProductsList;

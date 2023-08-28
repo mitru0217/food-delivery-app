@@ -2,7 +2,7 @@ import { Layout } from 'antd';
 import ProductsList from '../ProductsList/ProductsList';
 import BgImage from '../../assets/images/BgImageContent.jpg';
 
-const Content = ({ products }) => {
+const Content = () => {
   const contentStyle = {
     paddingInline: 50,
     backgroundImage: `url(${BgImage})`,
@@ -14,8 +14,9 @@ const Content = ({ products }) => {
   };
   return (
     <Layout.Content style={contentStyle}>
-      <ProductsList products={products} />
+      <ProductsList />
     </Layout.Content>
   );
 };
+
 export default Content;

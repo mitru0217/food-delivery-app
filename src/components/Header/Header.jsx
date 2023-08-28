@@ -1,6 +1,6 @@
 import { Layout, Button, Space, Badge } from 'antd';
-import PropTypes from 'prop-types';
 import { ShoppingCartOutlined, UserOutlined } from '@ant-design/icons';
+import { useBadgeCountStore } from '../../zustand/store';
 
 const Header = ({ onOrderButtonClick }) => {
   const headerStyle = {
@@ -10,11 +10,13 @@ const Header = ({ onOrderButtonClick }) => {
     backgroundColor: '#254000',
   };
 
+  const badgeCount = useBadgeCountStore(state => state.badgeCount);
+
   return (
     <Layout.Header style={headerStyle}>
       <Space size="middle">
         <Button type="primary">Shop</Button>
-        <Badge color="green" count={5}>
+        <Badge color="green" count={badgeCount}>
           <Button type="primary" onClick={onOrderButtonClick}>
             <ShoppingCartOutlined />
           </Button>
@@ -26,10 +28,6 @@ const Header = ({ onOrderButtonClick }) => {
       </Space>
     </Layout.Header>
   );
-};
-
-Header.propTypes = {
-  onOrderButtonClick: PropTypes.func.isRequired,
 };
 
 export default Header;

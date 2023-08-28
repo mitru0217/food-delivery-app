@@ -1,14 +1,5 @@
 import { Form, Input } from 'antd';
 
-const layout = {
-  labelCol: {
-    span: 8,
-  },
-  wrapperCol: {
-    span: 16,
-  },
-};
-
 const validateMessages = {
   required: '${label} is required!',
   types: {
@@ -26,11 +17,14 @@ const onFinish = values => {
 
 const UserData = () => (
   <Form
-    {...layout}
     name="nest-messages"
     onFinish={onFinish}
     style={{
-      maxWidth: 600,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100%',
     }}
     validateMessages={validateMessages}
   >
@@ -44,7 +38,7 @@ const UserData = () => (
         },
       ]}
     >
-      <Input />
+      <Input style={{ width: '100%' }} />
     </Form.Item>
     <Form.Item
       name={['user', 'email']}
@@ -61,7 +55,7 @@ const UserData = () => (
     </Form.Item>
     <Form.Item
       name={['user', 'phone']}
-      label="Phone Number"
+      label="Phone"
       rules={[
         {
           required: true,
